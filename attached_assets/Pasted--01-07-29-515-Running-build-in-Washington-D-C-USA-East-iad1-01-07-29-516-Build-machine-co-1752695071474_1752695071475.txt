@@ -1,0 +1,68 @@
+[01:07:29.515] Running build in Washington, D.C., USA (East) – iad1
+[01:07:29.516] Build machine configuration: 2 cores, 8 GB
+[01:07:29.547] Cloning github.com/TDOMxHUNTER/MPC-TRY-4 (Branch: main, Commit: 794b3bc)
+[01:07:29.688] Previous build caches not available
+[01:07:29.863] Cloning completed: 315.000ms
+[01:07:31.748] Running "vercel build"
+[01:07:32.196] Vercel CLI 44.3.0
+[01:07:32.654] Installing dependencies...
+[01:07:35.606] npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+[01:07:36.582] npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+[01:07:36.616] npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+[01:07:38.497] npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+[01:07:38.499] npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+[01:07:39.177] npm warn deprecated @paulmillr/qr@0.2.1: The package is now available as "qr": npm install qr
+[01:07:44.260] npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+[01:08:18.092] 
+[01:08:18.094] added 759 packages in 45s
+[01:08:18.094] 
+[01:08:18.094] 214 packages are looking for funding
+[01:08:18.095]   run `npm fund` for details
+[01:08:18.182] Detected Next.js version: 15.4.1
+[01:08:18.196] Running "npm run build"
+[01:08:18.382] 
+[01:08:18.384] > test-card@0.1.0 build
+[01:08:18.384] > next build
+[01:08:18.385] 
+[01:08:19.790] Attention: Next.js now collects completely anonymous telemetry regarding usage.
+[01:08:19.791] This information is used to shape Next.js' roadmap and prioritize features.
+[01:08:19.791] You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+[01:08:19.792] https://nextjs.org/telemetry
+[01:08:19.792] 
+[01:08:20.099]    ▲ Next.js 15.4.1
+[01:08:20.099] 
+[01:08:20.625]    Creating an optimized production build ...
+[01:08:48.201]  ⚠ Compiled with warnings in 26.0s
+[01:08:48.202] 
+[01:08:48.202] ./node_modules/pino/lib/tools.js
+[01:08:48.202] Module not found: Can't resolve 'pino-pretty' in '/vercel/path0/node_modules/pino/lib'
+[01:08:48.203] 
+[01:08:48.203] Import trace for requested module:
+[01:08:48.203] ./node_modules/pino/lib/tools.js
+[01:08:48.204] ./node_modules/pino/pino.js
+[01:08:48.204] ./node_modules/@walletconnect/logger/dist/index.es.js
+[01:08:48.204] ./node_modules/@walletconnect/universal-provider/dist/index.es.js
+[01:08:48.204] ./node_modules/@reown/appkit/dist/esm/src/client/appkit-base-client.js
+[01:08:48.205] ./node_modules/@reown/appkit/dist/esm/src/client/appkit.js
+[01:08:48.205] ./node_modules/@reown/appkit/dist/esm/exports/react.js
+[01:08:48.205] ./app/providers.tsx
+[01:08:48.205] 
+[01:09:13.999]  ✓ Compiled successfully in 49s
+[01:09:14.005]    Linting and checking validity of types ...
+[01:09:14.303]  ⨯ ESLint: Invalid Options: - Unknown options: useEslintrc, extensions - 'extensions' has been removed.
+[01:09:20.199] Failed to compile.
+[01:09:20.199] 
+[01:09:20.199] ./app/page.tsx:291:26
+[01:09:20.199] Type error: Property 'style' does not exist on type 'EventTarget'.
+[01:09:20.199] 
+[01:09:20.200] [0m [90m 289 |[39m               }}
+[01:09:20.200]  [90m 290 |[39m               onMouseEnter[33m=[39m{(e) [33m=>[39m {
+[01:09:20.200] [31m[1m>[22m[39m[90m 291 |[39m                 e[33m.[39mtarget[33m.[39mstyle[33m.[39mtransform [33m=[39m [32m'scale(1.05)'[39m[33m;[39m
+[01:09:20.201]  [90m     |[39m                          [31m[1m^[22m[39m
+[01:09:20.201]  [90m 292 |[39m                 e[33m.[39mtarget[33m.[39mstyle[33m.[39mtextShadow [33m=[39m [32m'0 0 10px rgba(102, 126, 234, 0.5)'[39m[33m;[39m
+[01:09:20.201]  [90m 293 |[39m               }}
+[01:09:20.201]  [90m 294 |[39m               onMouseLeave[33m=[39m{(e) [33m=>[39m {[0m
+[01:09:20.225] Next.js build worker exited with code: 1 and signal: null
+[01:09:20.249] Error: Command "npm run build" exited with 1
+[01:09:20.849] 
+[01:09:25.584] Exiting build container

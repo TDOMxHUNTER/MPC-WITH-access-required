@@ -1,0 +1,70 @@
+[20:17:24.339] Running build in Washington, D.C., USA (East) – iad1
+[20:17:24.339] Build machine configuration: 2 cores, 8 GB
+[20:17:24.354] Cloning github.com/TDOMxHUNTER/MPC-TRY-5 (Branch: main, Commit: cfb67e2)
+[20:17:24.859] Cloning completed: 505.000ms
+[20:17:27.303] Restored build cache from previous deployment (DGBQVjFRQgajHfAUBqoUzVQMHJuU)
+[20:17:29.392] Running "vercel build"
+[20:17:30.632] Vercel CLI 44.4.3
+[20:17:31.161] Installing dependencies...
+[20:17:33.049] 
+[20:17:33.050] up to date in 2s
+[20:17:33.050] 
+[20:17:33.051] 214 packages are looking for funding
+[20:17:33.051]   run `npm fund` for details
+[20:17:33.079] Detected Next.js version: 15.4.1
+[20:17:33.085] Running "npm run build"
+[20:17:33.223] 
+[20:17:33.223] > test-card@0.1.0 build
+[20:17:33.223] > next build
+[20:17:33.223] 
+[20:17:34.428]    ▲ Next.js 15.4.1
+[20:17:34.428] 
+[20:17:34.459]    Creating an optimized production build ...
+[20:17:55.814]  ⚠ Compiled with warnings in 21.0s
+[20:17:55.815] 
+[20:17:55.816] ./app/SearchAndLeaderboard.tsx
+[20:17:55.816] Attempted import error: 'getSearchProfiles' is not exported from './utils/profileStorage' (imported as 'getSearchProfiles').
+[20:17:55.816] 
+[20:17:55.816] Import trace for requested module:
+[20:17:55.817] ./app/SearchAndLeaderboard.tsx
+[20:17:55.817] ./app/page.tsx
+[20:17:55.817] 
+[20:17:55.817] ./app/SearchAndLeaderboard.tsx
+[20:17:55.818] Attempted import error: 'getSearchProfiles' is not exported from './utils/profileStorage' (imported as 'getSearchProfiles').
+[20:17:55.818] 
+[20:17:55.818] Import trace for requested module:
+[20:17:55.818] ./app/SearchAndLeaderboard.tsx
+[20:17:55.818] ./app/page.tsx
+[20:17:55.819] 
+[20:17:55.819] ./app/SearchAndLeaderboard.tsx
+[20:17:55.819] Attempted import error: 'getSearchProfiles' is not exported from './utils/profileStorage' (imported as 'getSearchProfiles').
+[20:17:55.819] 
+[20:17:55.820] Import trace for requested module:
+[20:17:55.820] ./app/SearchAndLeaderboard.tsx
+[20:17:55.820] ./app/page.tsx
+[20:17:55.820] 
+[20:17:55.820] ./app/SearchAndLeaderboard.tsx
+[20:17:55.821] Attempted import error: 'getSearchProfiles' is not exported from './utils/profileStorage' (imported as 'getSearchProfiles').
+[20:17:55.821] 
+[20:17:55.821] Import trace for requested module:
+[20:17:55.821] ./app/SearchAndLeaderboard.tsx
+[20:17:55.821] ./app/page.tsx
+[20:17:55.822] 
+[20:17:55.830]    Linting and checking validity of types ...
+[20:17:56.204]  ⨯ ESLint: Invalid Options: - Unknown options: useEslintrc, extensions - 'extensions' has been removed.
+[20:18:02.711] Failed to compile.
+[20:18:02.712] 
+[20:18:02.713] ./app/ProfileCard.tsx:645:43
+[20:18:02.713] Type error: Argument of type 'null' is not assignable to parameter of type 'string'.
+[20:18:02.713] 
+[20:18:02.713] [0m [90m 643 |[39m               [33m<[39m[33mbutton[39m
+[20:18:02.713]  [90m 644 |[39m                 className[33m=[39m[32m"pc-save-btn"[39m
+[20:18:02.714] [31m[1m>[22m[39m[90m 645 |[39m                 onClick[33m=[39m{() [33m=>[39m handleSave([36mnull[39m)}
+[20:18:02.714]  [90m     |[39m                                           [31m[1m^[22m[39m
+[20:18:02.714]  [90m 646 |[39m                 type[33m=[39m[32m"button"[39m
+[20:18:02.714]  [90m 647 |[39m               [33m>[39m
+[20:18:02.714]  [90m 648 |[39m                 [33mSave[39m [33mChanges[39m[0m
+[20:18:02.750] Next.js build worker exited with code: 1 and signal: null
+[20:18:02.812] Error: Command "npm run build" exited with 1
+[20:18:03.501] 
+[20:18:06.300] Exiting build container

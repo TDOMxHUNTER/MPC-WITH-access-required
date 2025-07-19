@@ -1,0 +1,41 @@
+[21:25:37.273] Running build in Washington, D.C., USA (East) – iad1
+[21:25:37.279] Build machine configuration: 2 cores, 8 GB
+[21:25:37.319] Cloning github.com/TDOMxHUNTER/MPC-TRY-5 (Branch: main, Commit: 1e99813)
+[21:25:38.301] Cloning completed: 982.000ms
+[21:25:40.363] Restored build cache from previous deployment (DGBQVjFRQgajHfAUBqoUzVQMHJuU)
+[21:25:41.971] Running "vercel build"
+[21:25:43.117] Vercel CLI 44.4.3
+[21:25:44.106] Installing dependencies...
+[21:25:46.810] 
+[21:25:46.811] up to date in 2s
+[21:25:46.811] 
+[21:25:46.811] 214 packages are looking for funding
+[21:25:46.812]   run `npm fund` for details
+[21:25:46.842] Detected Next.js version: 15.4.1
+[21:25:46.847] Running "npm run build"
+[21:25:47.070] 
+[21:25:47.071] > test-card@0.1.0 build
+[21:25:47.072] > next build
+[21:25:47.072] 
+[21:25:49.059]    ▲ Next.js 15.4.1
+[21:25:49.059] 
+[21:25:49.094]    Creating an optimized production build ...
+[21:26:38.339]  ✓ Compiled successfully in 49s
+[21:26:38.359]    Linting and checking validity of types ...
+[21:26:38.728]  ⨯ ESLint: Invalid Options: - Unknown options: useEslintrc, extensions - 'extensions' has been removed.
+[21:26:45.256] Failed to compile.
+[21:26:45.256] 
+[21:26:45.256] ./app/components/WalletConnection.tsx:47:22
+[21:26:45.256] Type error: Property 'web3' does not exist on type 'Window & typeof globalThis'.
+[21:26:45.256] 
+[21:26:45.257] [0m [90m 45 |[39m         [90m// Warm up network detection[39m
+[21:26:45.257]  [90m 46 |[39m         () [33m=>[39m {
+[21:26:45.257] [31m[1m>[22m[39m[90m 47 |[39m           [36mif[39m (window[33m.[39mweb3) {
+[21:26:45.257]  [90m    |[39m                      [31m[1m^[22m[39m
+[21:26:45.257]  [90m 48 |[39m             [36mtry[39m {
+[21:26:45.257]  [90m 49 |[39m               window[33m.[39mweb3[33m.[39mcurrentProvider[33m?[39m[33m.[39misConnected[33m?[39m[33m.[39m()
+[21:26:45.257]  [90m 50 |[39m             } [36mcatch[39m {}[0m
+[21:26:45.289] Next.js build worker exited with code: 1 and signal: null
+[21:26:45.368] Error: Command "npm run build" exited with 1
+[21:26:46.060] 
+[21:26:48.906] Exiting build container
