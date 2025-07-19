@@ -8,6 +8,7 @@ export interface SearchResult {
   textColor?: string;
   icon?: string;
   handle?: string;
+  avatarUrl: string;
   stats?: {
     totalEarned?: string;
     todayPoints?: string;
