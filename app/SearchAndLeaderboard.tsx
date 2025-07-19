@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState, useEffect } from 'react';
 import './SearchAndLeaderboard.css';
@@ -42,7 +41,10 @@ const SearchAndLeaderboard: React.FC<SearchAndLeaderboardProps> = ({ onProfileSe
     const searchCounts = getProfileSearchCounts();
 
     const profilesWithCounts = savedProfiles.map(profile => ({
-      ...profile,
+      name: profile.name || '',
+      title: profile.title || '',
+      handle: profile.handle || '',
+      avatarUrl: profile.avatarUrl || '/monad_logo.ico',
       searchCount: (profile.handle && searchCounts[profile.handle]) || profile.searchCount || 0
     }));
 
@@ -63,14 +65,14 @@ const SearchAndLeaderboard: React.FC<SearchAndLeaderboardProps> = ({ onProfileSe
       // Update search count with proper storage
       const currentCounts = getProfileSearchCounts();
       const newCount = (currentCounts[profile.handle] || 0) + 1;
-      
+
       // Store the updated count
       const updatedCounts = { ...currentCounts, [profile.handle]: newCount };
       localStorage.setItem('profileSearchCounts', JSON.stringify(updatedCounts));
-      
+
       // Update the profile with new search count
       const updatedProfile = { ...profile, searchCount: newCount };
-      
+
       // Update the search profiles array with new search count
       const searchProfiles = getSearchProfiles();
       const profileIndex = searchProfiles.findIndex(p => p.handle === profile.handle);
@@ -78,13 +80,13 @@ const SearchAndLeaderboard: React.FC<SearchAndLeaderboardProps> = ({ onProfileSe
         searchProfiles[profileIndex].searchCount = newCount;
         localStorage.setItem('searchProfiles', JSON.stringify(searchProfiles));
       }
-      
+
       // Trigger custom event to notify other components
       window.dispatchEvent(new CustomEvent('profileUpdated', { detail: updatedProfile }));
-      
+
       onProfileSelect(updatedProfile);
       setIsOpen(false);
-      
+
       // Reload profiles to reflect changes
       setTimeout(() => {
         loadProfiles();
