@@ -44,7 +44,7 @@ const SearchAndLeaderboard: React.FC<SearchAndLeaderboardProps> = ({ onProfileSe
       name: profile.name || '',
       title: profile.title || '',
       handle: profile.handle || '',
-      avatarUrl: profile.avatarUrl || '/monad_logo.ico',
+      avatarUrl: profile.avatarUrl || profile.icon || '/monad_logo.ico',
       searchCount: (profile.handle && searchCounts[profile.handle]) || profile.searchCount || 0
     }));
 
