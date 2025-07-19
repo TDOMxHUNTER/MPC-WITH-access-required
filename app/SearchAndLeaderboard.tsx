@@ -43,7 +43,7 @@ const SearchAndLeaderboard: React.FC<SearchAndLeaderboardProps> = ({ onProfileSe
 
     const profilesWithCounts = savedProfiles.map(profile => ({
       ...profile,
-      searchCount: searchCounts[profile.handle] || profile.searchCount || 0
+      searchCount: (profile.handle && searchCounts[profile.handle]) || profile.searchCount || 0
     }));
 
     setProfiles(profilesWithCounts);
