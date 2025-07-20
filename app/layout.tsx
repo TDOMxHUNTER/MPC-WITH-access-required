@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NODE_ENV === 'production' 
+    ? 'https://your-production-domain.com' 
+    : 'http://localhost:3000'),
   title: 'Monad Profile Card',
   description: 'Create and customize your unique Monad profile card with holographic effects',
   icons: {
