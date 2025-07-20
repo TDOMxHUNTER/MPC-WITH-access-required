@@ -1,4 +1,3 @@
-
 'use client'
 
 export interface SearchResult {
@@ -28,6 +27,7 @@ const DEFAULT_PROFILE_CARDS: SearchResult[] = [
     color: "#6B46C1",
     textColor: "#E0E7FF",
     icon: "/monad_logo.ico",
+    avatarUrl: "/monad_logo.ico",
     handle: "@monad_xyz",
     stats: {
       totalEarned: "$12,500",
@@ -42,6 +42,7 @@ const DEFAULT_PROFILE_CARDS: SearchResult[] = [
     color: "#059669",
     textColor: "#D1FAE5",
     icon: "/benja.ico",
+    avatarUrl: "/benja.ico",
     handle: "@itsbenja",
     stats: {
       totalEarned: "$8,900",
@@ -56,6 +57,7 @@ const DEFAULT_PROFILE_CARDS: SearchResult[] = [
     color: "#DC2626",
     textColor: "#FEE2E2",
     icon: "/JAMES.ico",
+    avatarUrl: "/JAMES.ico",
     handle: "@jameschain",
     stats: {
       totalEarned: "$15,600",
@@ -70,6 +72,7 @@ const DEFAULT_PROFILE_CARDS: SearchResult[] = [
     color: "#7C2D12",
     textColor: "#FED7AA",
     icon: "/EUNICE.ico",
+    avatarUrl: "/EUNICE.ico",
     handle: "@euniceeth",
     stats: {
       totalEarned: "$22,100",
@@ -84,6 +87,7 @@ const DEFAULT_PROFILE_CARDS: SearchResult[] = [
     color: "#1E40AF",
     textColor: "#DBEAFE",
     icon: "/mike.ico",
+    avatarUrl: "/mike.ico",
     handle: "@mikepoly",
     stats: {
       totalEarned: "$9,800",
@@ -98,6 +102,7 @@ const DEFAULT_PROFILE_CARDS: SearchResult[] = [
     color: "#9333EA",
     textColor: "#F3E8FF",
     icon: "/KEONEHON.ico",
+    avatarUrl: "/KEONEHON.ico",
     handle: "@keonearb",
     stats: {
       totalEarned: "$18,200",
@@ -117,6 +122,7 @@ const DEFAULT_SEARCH_PROFILES: SearchResult[] = [
     textColor: "#E0E7FF",
     icon: "/monad_logo.ico",
     handle: "@monad_xyz",
+    avatarUrl: "/monad_logo.ico",
     points: 1247,
     searchCount: 1247,
     owned: false
@@ -128,6 +134,7 @@ const DEFAULT_SEARCH_PROFILES: SearchResult[] = [
     textColor: "#D1FAE5",
     icon: "/benja.ico",
     handle: "@itsbenja",
+    avatarUrl: "/benja.ico",
     points: 892,
     searchCount: 892,
     owned: false
@@ -139,6 +146,7 @@ const DEFAULT_SEARCH_PROFILES: SearchResult[] = [
     textColor: "#FEE2E2",
     icon: "/JAMES.ico",
     handle: "@jameschain",
+    avatarUrl: "/JAMES.ico",
     points: 1435,
     searchCount: 1435,
     owned: false
@@ -150,6 +158,7 @@ const DEFAULT_SEARCH_PROFILES: SearchResult[] = [
     textColor: "#FED7AA",
     icon: "/EUNICE.ico",
     handle: "@euniceeth",
+    avatarUrl: "/EUNICE.ico",
     points: 2156,
     searchCount: 2156,
     owned: false
@@ -161,6 +170,7 @@ const DEFAULT_SEARCH_PROFILES: SearchResult[] = [
     textColor: "#DBEAFE",
     icon: "/mike.ico",
     handle: "@mikepoly",
+    avatarUrl: "/mike.ico",
     points: 987,
     searchCount: 987,
     owned: false
@@ -172,6 +182,7 @@ const DEFAULT_SEARCH_PROFILES: SearchResult[] = [
     textColor: "#F3E8FF",
     icon: "/KEONEHON.ico",
     handle: "@keonearb",
+    avatarUrl: "/KEONEHON.ico",
     points: 1678,
     searchCount: 1678,
     owned: false
@@ -188,7 +199,7 @@ export function getProfileCards(): SearchResult[] {
       const cards = JSON.parse(stored);
       return cards.length > 0 ? cards : DEFAULT_PROFILE_CARDS;
     }
-    
+
     // Initialize with defaults if not found
     localStorage.setItem('profileCards', JSON.stringify(DEFAULT_PROFILE_CARDS));
     return DEFAULT_PROFILE_CARDS;
@@ -207,9 +218,9 @@ export function saveProfileCard(updatedProfile: SearchResult) {
     const updatedCards = currentCards.map(card => 
       card.name === updatedProfile.name ? { ...card, ...updatedProfile } : card
     );
-    
+
     localStorage.setItem('profileCards', JSON.stringify(updatedCards));
-    
+
     // Also update search profiles for consistency
     const searchProfiles = getSearchProfiles();
     const updatedSearchProfiles = searchProfiles.map(profile => 
@@ -220,7 +231,7 @@ export function saveProfileCard(updatedProfile: SearchResult) {
         searchCount: updatedProfile.stats?.searchCount || profile.searchCount || 0
       } : profile
     );
-    
+
     localStorage.setItem('searchProfiles', JSON.stringify(updatedSearchProfiles));
     console.log('Profile saved successfully:', updatedProfile.name);
   } catch (error) {
@@ -243,7 +254,7 @@ export function getSearchProfiles(): SearchResult[] {
       const profiles = JSON.parse(stored);
       return profiles.length > 0 ? profiles : DEFAULT_SEARCH_PROFILES;
     }
-    
+
     // Initialize with defaults if not found
     localStorage.setItem('searchProfiles', JSON.stringify(DEFAULT_SEARCH_PROFILES));
     return DEFAULT_SEARCH_PROFILES;
@@ -265,7 +276,7 @@ export function initializeDefaultOwnership() {
   try {
     const profileCards = getProfileCards();
     const searchProfiles = getSearchProfiles();
-    
+
     // Update profile cards
     const updatedCards = profileCards.map(card => ({
       ...card,
@@ -275,16 +286,16 @@ export function initializeDefaultOwnership() {
       },
       owned: card.owned ?? false
     }));
-    
+
     // Update search profiles
     const updatedSearchProfiles = searchProfiles.map(profile => ({
       ...profile,
       owned: profile.owned ?? false
     }));
-    
+
     localStorage.setItem('profileCards', JSON.stringify(updatedCards));
     localStorage.setItem('searchProfiles', JSON.stringify(updatedSearchProfiles));
-    
+
     console.log('Default ownership initialized for all profiles');
   } catch (error) {
     console.error('Error initializing default ownership:', error);
@@ -304,9 +315,9 @@ export function updateProfileSearchCount(handle: string) {
         points: (profile.points || 0) + 1
       } : profile
     );
-    
+
     localStorage.setItem('searchProfiles', JSON.stringify(updatedProfiles));
-    
+
     // Also update profile cards
     const cards = getProfileCards();
     const updatedCards = cards.map(card => 
@@ -318,9 +329,9 @@ export function updateProfileSearchCount(handle: string) {
         }
       } : card
     );
-    
+
     localStorage.setItem('profileCards', JSON.stringify(updatedCards));
-    
+
     console.log(`Search count updated for ${handle}`);
   } catch (error) {
     console.error('Error updating search count:', error);
@@ -334,13 +345,13 @@ export function getProfileSearchCounts(): Record<string, number> {
   try {
     const profiles = getSearchProfiles();
     const counts: Record<string, number> = {};
-    
+
     profiles.forEach(profile => {
       if (profile.handle) {
         counts[profile.handle] = profile.searchCount || 0;
       }
     });
-    
+
     return counts;
   } catch (error) {
     console.error('Error getting search counts:', error);
