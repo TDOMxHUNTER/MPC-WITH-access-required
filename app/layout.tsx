@@ -22,6 +22,25 @@ export const metadata: Metadata = {
     shortcut: '/monad_logo.ico',
     apple: '/monad_logo.ico',
   },
+  openGraph: {
+    title: 'Monad Profile Card',
+    description: 'Create and customize your unique Monad profile card with holographic effects',
+    images: [
+      {
+        url: '/preview.ico',
+        width: 1200,
+        height: 630,
+        alt: 'Monad Profile Card - Access Restricted Interface',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Monad Profile Card',
+    description: 'Create and customize your unique Monad profile card with holographic effects',
+    images: ['/preview.ico'],
+  },
 }
 
 export default function RootLayout({
